@@ -8,9 +8,6 @@ import java.sql.*;
 
 public class UsersPage extends javax.swing.JPanel {
 
-    /**
-     * Creates new form UsersPage
-     */
     public UsersPage() {
         initComponents();
         loadDataSet();

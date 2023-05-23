@@ -5,13 +5,6 @@ public class CustomerDTO {
     private int custID;
     private String custCode, fullName, location, phone;
 
-    public int getCustID() {
-        return custID;
-    }
-
-    public void setCustID(int custID) {
-        this.custID = custID;
-    }
 
     public String getCustCode() {
         return custCode;

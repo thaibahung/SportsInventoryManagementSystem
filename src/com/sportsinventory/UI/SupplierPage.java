@@ -13,9 +13,6 @@ import java.sql.SQLException;
 
 public class SupplierPage extends javax.swing.JPanel {
 
-    /**
-     * Creates new form SupplierPage
-     */
     public SupplierPage() {
         initComponents();
         loadDataSet();

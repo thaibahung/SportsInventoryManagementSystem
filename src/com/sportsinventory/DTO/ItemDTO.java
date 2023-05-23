@@ -7,13 +7,6 @@ public class ItemDTO {
     private Double totalCost;
     private String itemCode, itemName, date, suppCode, custCode, custName, description;
 
-    public int getItemID() {
-        return itemID;
-    }
-
-    public void setItemID(int itemID) {
-        this.itemID = itemID;
-    }
 
     public int getQuantity() {
         return quantity;
@@ -89,18 +82,6 @@ public class ItemDTO {
 
     public String getCustCode() {
         return custCode;
-    }
-
-    public void setCustCode(String custCode) {
-        this.custCode = custCode;
-    }
-
-    public String getCustName() {
-        return custName;
-    }
-
-    public void setCustName(String custName) {
-        this.custName = custName;
     }
 
     public String getDescription() {

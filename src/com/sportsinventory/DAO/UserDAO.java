@@ -60,18 +60,6 @@ public class UserDAO {
                 userid = "root";
                 password = "root";
             }
-//            else {
-//                String resQuery2 = "SELECT * FROM users ORDER BY id DESC";
-//                resultSet = statement.executeQuery(resQuery2);
-//
-//                if(resultSet.next()){
-//                    oldUsername = resultSet.getString("userid");
-//                    Integer uCode = Integer.parseInt(oldUsername.substring(4));
-//                    uCode++;
-//                    userid = "user" + uCode;
-//                    password = "user" + uCode;
-//                }
-//            }
 
             String query = "INSERT INTO users (name,location,phone,id,password,usertype) " +
                     "VALUES(?,?,?,?,?,?)";
@@ -107,8 +95,8 @@ public class UserDAO {
             prepStatement.executeUpdate();
             JOptionPane.showMessageDialog(null, "Updated Successfully.");
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
     }
 
@@ -120,8 +108,8 @@ public class UserDAO {
             prepStatement.setString(1, userid);
             prepStatement.executeUpdate();
             JOptionPane.showMessageDialog(null, "User Deleted.");
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
         new UsersPage().loadDataSet();
     }
@@ -131,8 +119,8 @@ public class UserDAO {
         try {
             String query = "SELECT * FROM users";
             resultSet = statement.executeQuery(query);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
         return resultSet;
     }

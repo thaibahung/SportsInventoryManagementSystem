@@ -122,16 +122,16 @@ public class SupplierDAO {
     // Method to display retrieved data set in tabular form
     public DefaultTableModel buildTableModel(ResultSet resultSet) throws SQLException {
         ResultSetMetaData metaData = resultSet.getMetaData();
-        Vector<String> columnNames = new Vector<String>();
+        Vector<String> columnNames = new Vector<>();
         int colCount = metaData.getColumnCount();
 
         for (int col=1; col <= colCount; col++){
             columnNames.add(metaData.getColumnName(col).toUpperCase(Locale.ROOT));
         }
 
-        Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+        Vector<Vector<Object>> data = new Vector<>();
         while (resultSet.next()) {
-            Vector<Object> vector = new Vector<Object>();
+            Vector<Object> vector = new Vector<>();
             for (int col=1; col<=colCount; col++) {
                 vector.add(resultSet.getObject(col));
             }
