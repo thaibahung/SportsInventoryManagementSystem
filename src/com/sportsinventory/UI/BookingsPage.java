@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class PurchasePage extends javax.swing.JPanel {
+public class BookingsPage extends javax.swing.JPanel {
 
     ItemDTO itemDTO;
     String username = null;
@@ -17,7 +17,7 @@ public class PurchasePage extends javax.swing.JPanel {
     int quantity;
     String prodCode = null;
 
-    public PurchasePage(Dashboard dashboard) {
+    public BookingsPage(Dashboard dashboard) {
         initComponents();
         this.dashboard = dashboard;
         loadComboBox();
@@ -53,19 +53,19 @@ public class PurchasePage extends javax.swing.JPanel {
         costText = new javax.swing.JTextField();
         sellText = new javax.swing.JTextField();
         brandText = new javax.swing.JTextField();
-        purchaseButton = new javax.swing.JButton();
+        bookButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
         clearButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        purchaseTable = new javax.swing.JTable();
+        bookTable = new javax.swing.JTable();
         refreshButton = new javax.swing.JButton();
         searchText = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
-        jLabel1.setText("PURCHASE");
+        jLabel1.setText("Book");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Purchase Product"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Book Product"));
 
         jLabel2.setText("Supplier:");
 
@@ -98,10 +98,10 @@ public class PurchasePage extends javax.swing.JPanel {
             }
         });
 
-        purchaseButton.setText("Purchase");
-        purchaseButton.addActionListener(new java.awt.event.ActionListener() {
+        bookButton.setText("Book");
+        bookButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                purchaseButtonActionPerformed(evt);
+                bookButtonActionPerformed(evt);
             }
         });
 
@@ -162,7 +162,7 @@ public class PurchasePage extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(brandText))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(purchaseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
                     .addComponent(clearButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -209,12 +209,12 @@ public class PurchasePage extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(purchaseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(clearButton))
         );
 
-        purchaseTable.setModel(new javax.swing.table.DefaultTableModel(
+        bookTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -225,12 +225,12 @@ public class PurchasePage extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        purchaseTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        bookTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                purchaseTableMouseClicked(evt);
+                bookTableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(purchaseTable);
+        jScrollPane1.setViewportView(bookTable);
 
         refreshButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         refreshButton.setText("REFRESH");
@@ -299,7 +299,7 @@ public class PurchasePage extends javax.swing.JPanel {
         dashboard.addSuppPage();
     }//GEN-LAST:event_addSuppButtonActionPerformed
 
-    private void purchaseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purchaseButtonActionPerformed
+    private void bookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookButtonActionPerformed
         itemDTO = new ItemDTO();
         if (codeText.getText().equals("") || jDateChooser1.getDate()==null
                 || quantityText.getText().equals(""))
@@ -325,19 +325,19 @@ public class PurchasePage extends javax.swing.JPanel {
                 e.printStackTrace();
             }
         }
-    }//GEN-LAST:event_purchaseButtonActionPerformed
+    }//GEN-LAST:event_bookButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        if (purchaseTable.getSelectedRow()<0)
+        if (bookTable.getSelectedRow()<0)
             JOptionPane.showMessageDialog(null, "Please select a transaction from the table.");
         else {
             int opt = JOptionPane.showConfirmDialog(
                     null,
-                    "Are you sure you want to delete this purchase?",
+                    "Are you sure you want to delete this book?",
                     "Confirmation",
                     JOptionPane.YES_NO_OPTION);
             if(opt==JOptionPane.YES_OPTION) {
-                new ItemDAO().deleteItemDAO((String) purchaseTable.getValueAt(purchaseTable.getSelectedRow(),0));
+                new ItemDAO().deleteItemDAO((String) bookTable.getValueAt(bookTable.getSelectedRow(),0));
                 new ItemDAO().editBookedStock(prodCode, quantity);
                 loadDataSet();
             }
@@ -359,17 +359,17 @@ public class PurchasePage extends javax.swing.JPanel {
         loadSearchData(searchText.getText());
     }//GEN-LAST:event_searchTextKeyReleased
 
-    private void purchaseTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_purchaseTableMouseClicked
-        int row = purchaseTable.getSelectedRow();
-        int col = purchaseTable.getColumnCount();
+    private void bookTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookTableMouseClicked
+        int row = bookTable.getSelectedRow();
+        int col = bookTable.getColumnCount();
 
         Object[] data = new Object[col];
         for (int i=0; i<col; i++)
-            data[i] = purchaseTable.getValueAt(row, i);
+            data[i] = bookTable.getValueAt(row, i);
         
         quantity = Integer.parseInt(data[3].toString());
         prodCode = data[1].toString();
-    }//GEN-LAST:event_purchaseTableMouseClicked
+    }//GEN-LAST:event_bookTableMouseClicked
 
     private void codeTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_codeTextKeyReleased
         try {
@@ -405,7 +405,7 @@ public class PurchasePage extends javax.swing.JPanel {
     public void loadDataSet() {
         try {
             ItemDAO itemDAO = new ItemDAO();
-            purchaseTable.setModel(itemDAO.buildTableModel(itemDAO.getBookingsInfo()));
+            bookTable.setModel(itemDAO.buildTableModel(itemDAO.getBookingsInfo()));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -415,7 +415,7 @@ public class PurchasePage extends javax.swing.JPanel {
     public void loadSearchData(String text) {
         try {
             ItemDAO itemDAO = new ItemDAO();
-            purchaseTable.setModel(itemDAO.buildTableModel(itemDAO.getPurchaseSearch(text)));
+            bookTable.setModel(itemDAO.buildTableModel(itemDAO.getBookSearch(text)));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -444,8 +444,8 @@ public class PurchasePage extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField nameText;
-    private javax.swing.JButton purchaseButton;
-    private javax.swing.JTable purchaseTable;
+    private javax.swing.JButton bookButton;
+    private javax.swing.JTable bookTable;
     private javax.swing.JTextField quantityText;
     private javax.swing.JButton refreshButton;
     private javax.swing.JTextField searchText;

@@ -134,9 +134,9 @@ public class UserDAO {
         }
         return resultSet;
     }
-    public void getFullName(UserDTO userDTO, String userid) {
+    public void getFullName(UserDTO userDTO, String username) {
         try {
-            String query = "SELECT * FROM users WHERE id='" +userid+ "' LIMIT 1";
+            String query = "SELECT * FROM users WHERE username='" +username+ "' LIMIT 1";
             resultSet = statement.executeQuery(query);
             String fullName = null;
             if(resultSet.next()) fullName = resultSet.getString(2);

@@ -152,7 +152,6 @@
                           <Component id="stockButton" pref="107" max="32767" attributes="0"/>
                           <Component id="custButton" max="32767" attributes="0"/>
                           <Component id="suppButton" max="32767" attributes="0"/>
-                          <Component id="salesButton" max="32767" attributes="0"/>
                           <Component id="usersButton" max="32767" attributes="0"/>
                           <Component id="purchaseButton" max="32767" attributes="0"/>
                           <Component id="logsButton" max="32767" attributes="0"/>
@@ -175,14 +174,12 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="suppButton" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="salesButton" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="purchaseButton" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="usersButton" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="logsButton" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
+                      <EmptySpace pref="77" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -243,17 +240,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="suppButtonActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="salesButton">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Sales"/>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Hand Cursor"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salesButtonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="usersButton">

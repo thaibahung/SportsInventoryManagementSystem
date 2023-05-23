@@ -56,7 +56,7 @@ public class BookedPage extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
-        jLabel1.setText("PURCHASE");
+        jLabel1.setText("Book");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Purchase Product"));
 
@@ -401,7 +401,7 @@ public class BookedPage extends javax.swing.JPanel {
     public void loadSearchData(String text) {
         try {
             ItemDAO itemDAO = new ItemDAO();
-            purchaseTable.setModel(itemDAO.buildTableModel(itemDAO.getPurchaseSearch(text)));
+            purchaseTable.setModel(itemDAO.buildTableModel(itemDAO.getBookSearch(text)));
         } catch (SQLException e) {
             e.printStackTrace();
         }

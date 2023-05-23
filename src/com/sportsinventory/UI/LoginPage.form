@@ -114,7 +114,7 @@
           <Font name="Poor Richard" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="STORE  INVENTORY"/>
+        <Property name="text" type="java.lang.String" value="SPORTS  INVENTORY"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox1">

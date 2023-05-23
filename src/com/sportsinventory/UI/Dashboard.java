@@ -47,7 +47,7 @@ public class Dashboard extends javax.swing.JFrame {
         displayPanel.add("Products", new ItemPage(username, this));
         displayPanel.add("Suppliers", new SupplierPage());
         displayPanel.add("Current Stock", new CurrentStockPage(username));
-        displayPanel.add("Purchase", new PurchasePage(this));
+        displayPanel.add("Purchase", new BookingsPage(this));
         displayPanel.add("Logs", new UserLogsPage());
 
         this.addWindowListener(new WindowAdapter() {
@@ -112,7 +112,6 @@ public class Dashboard extends javax.swing.JFrame {
         stockButton = new javax.swing.JButton();
         custButton = new javax.swing.JButton();
         suppButton = new javax.swing.JButton();
-        salesButton = new javax.swing.JButton();
         usersButton = new javax.swing.JButton();
         purchaseButton = new javax.swing.JButton();
         logsButton = new javax.swing.JButton();
@@ -195,14 +194,6 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        salesButton.setText("Sales");
-        salesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        salesButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salesButtonActionPerformed(evt);
-            }
-        });
-
         usersButton.setText("Users");
         usersButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         usersButton.addActionListener(new java.awt.event.ActionListener() {
@@ -239,7 +230,6 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(stockButton, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
                     .addComponent(custButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(suppButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(salesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(usersButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(purchaseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(logsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -259,7 +249,6 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(suppButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(salesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(purchaseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -375,10 +364,6 @@ public class Dashboard extends javax.swing.JFrame {
         addUsersPage();
     }//GEN-LAST:event_usersButtonActionPerformed
 
-    private void salesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salesButtonActionPerformed
-        addSalesPage();
-    }//GEN-LAST:event_salesButtonActionPerformed
-
     private void suppButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suppButtonActionPerformed
         addSuppPage();
     }//GEN-LAST:event_suppButtonActionPerformed
@@ -423,7 +408,6 @@ public class Dashboard extends javax.swing.JFrame {
     public void notForEmployee(){
         navPanel.remove(usersButton);
         navPanel.remove(logsButton);
-        //navPanel.remove(salesButton);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -442,7 +426,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel navPanel;
     private javax.swing.JButton prodButton;
     private javax.swing.JButton purchaseButton;
-    private javax.swing.JButton salesButton;
     private javax.swing.JButton stockButton;
     private javax.swing.JButton suppButton;
     private javax.swing.JPanel userPanel;

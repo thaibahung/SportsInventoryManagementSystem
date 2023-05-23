@@ -156,7 +156,7 @@ public class ItemDAO {
         }
     }
 
-    // Method to add a new purchase transaction
+    // Method to add a new book transaction
     public void addBookingDAO(ItemDTO itemDTO) {
         try {
             String query = "INSERT INTO booking VALUES(?,?,?,?,?,?,?)";
@@ -168,7 +168,7 @@ public class ItemDAO {
             prepStatement.setDouble(5, itemDTO.getTotalCost());
 
             prepStatement.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Purchase log added.");
+            JOptionPane.showMessageDialog(null, "Book log added.");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -360,7 +360,7 @@ public class ItemDAO {
         return resultSet;
     }
 
-    // Purchase table data set retrieval
+    // Book table data set retrieval
     public ResultSet getBooking() {
         try {
             String query = "SELECT bookingid, booking.itemid,ItemName,Quantity,penaltyperday " +
@@ -451,8 +451,8 @@ public class ItemDAO {
         return resultSet;
     }
 
-    // Search method for purchase logs
-    public ResultSet getPurchaseSearch(String text) {
+    // Search method for book logs
+    public ResultSet getBookSearch(String text) {
         try {
             String query = "SELECT bookingid,booking.itemid,items.itemname,quantity " +
                     "FROM booking INNER JOIN items ON booking.itemid=items.itemid " +
