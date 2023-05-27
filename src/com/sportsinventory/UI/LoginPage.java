@@ -11,6 +11,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
+import java.awt.Taskbar;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 public class LoginPage extends javax.swing.JFrame {
 
     UserDTO userDTO;
@@ -19,6 +23,11 @@ public class LoginPage extends javax.swing.JFrame {
     // Constructor method
     public LoginPage() {
         initComponents();
+        ImageIcon logoIcon = new ImageIcon(getClass().getResource("/Resources/logoTransparent.png"));
+        //For Microsoft Windows
+        setIconImage(logoIcon.getImage());
+        final Taskbar taskbar = Taskbar.getTaskbar() ;
+        try {taskbar. setIconImage (logoIcon.getImage ( )) ;} catch (final Exception e) {}
         userDTO = new UserDTO();
     }
 
@@ -31,6 +40,7 @@ public class LoginPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        bg = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         userText = new javax.swing.JTextField();
@@ -39,24 +49,41 @@ public class LoginPage extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         loginButton = new javax.swing.JButton();
         clearButton = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/bg1.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login");
         setBackground(new java.awt.Color(102, 102, 102));
         setBounds(new java.awt.Rectangle(500, 100, 0, 0));
         setName("loginFrame"); // NOI18N
+        getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Username:");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(530, 250, 74, 31);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Password:");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(530, 290, 74, 33);
+        getContentPane().add(userText);
+        userText.setBounds(610, 250, 204, 31);
+        getContentPane().add(passText);
+        passText.setBounds(610, 290, 204, 32);
 
         jLabel3.setFont(new java.awt.Font("Poor Richard", 1, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("SPORTS  INVENTORY");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(560, 190, 284, 44);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMINISTRATOR", "EMPLOYEE" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(610, 340, 200, 50);
 
         loginButton.setText("LOGIN");
         loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -65,6 +92,8 @@ public class LoginPage extends javax.swing.JFrame {
                 loginButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(loginButton);
+        loginButton.setBounds(610, 400, 90, 37);
 
         clearButton.setText("CLEAR");
         clearButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -73,54 +102,17 @@ public class LoginPage extends javax.swing.JFrame {
                 clearButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(clearButton);
+        clearButton.setBounds(720, 400, 90, 37);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(userText))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(passText))
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE))
-                .addContainerGap(52, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(userText, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(passText, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)))
-                .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(80, 80, 80))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/logoTransparent.png"))); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(630, 30, 150, 158);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/bg1.png"))); // NOI18N
+        jLabel5.setText("jLabel5");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, 0, 890, 490);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -155,12 +147,20 @@ public class LoginPage extends javax.swing.JFrame {
             userDTO.setInTime(String.valueOf(inTime));
             dispose();
             new Dashboard(username, userType, userDTO);
-        } else {
+        } 
+        else if(username.equals(""))
+        {
+            JOptionPane.showMessageDialog(null,"Please enter your username!");
+        }
+        else if(password.equals(""))
+        {
+            JOptionPane.showMessageDialog(null,"Please enter your password!");
+        }
+        else {
            JOptionPane.showMessageDialog(
                    null,
                    "Invalid username or password.");
         }
-        
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
@@ -193,11 +193,14 @@ public class LoginPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bg;
     private javax.swing.JButton clearButton;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JButton loginButton;
     private javax.swing.JPasswordField passText;
     private javax.swing.JTextField userText;
