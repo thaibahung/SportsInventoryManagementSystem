@@ -11,7 +11,7 @@ import java.util.Properties;
 public class ConnectionFactory {
 
     static final String driver = "com.mysql.cj.jdbc.Driver";
-    static final String url = "jdbc:mysql://localhost:3306/sportsinventory?user=root&password=chachan2803";
+    static final String url = "jdbc:mysql://localhost:3306/sportsinventory?user=root&password=Hbtchou123";
     static String username;
     static String password;
 
@@ -24,7 +24,7 @@ public class ConnectionFactory {
     public ConnectionFactory(){
         try {
             prop = new Properties();
-            prop.loadFromXML(new FileInputStream("src/com.sportsinventory/Database/DBCredentials.xml"));
+            prop.loadFromXML(new FileInputStream("D:/VinUni/Spring 2023/COMP 1020/Project/VinEquip/SportsInventoryManagementSystem/src/com/sportsinventory/Database/DBCredentials.xml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

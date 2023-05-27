@@ -89,7 +89,7 @@ public class CustomerDAO {
     // Method to retrieve data set to be displayed
     public ResultSet getQueryResult() {
         try {
-            String query = "SELECT customercode,fullname,location,phone FROM customers";
+            String query = "SELECT custcode,fullname,location,phone FROM customers";
             resultSet = statement.executeQuery(query);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -100,7 +100,7 @@ public class CustomerDAO {
     // Method to retrieve search data
     public ResultSet getCustomerSearch(String text) {
         try {
-            String query = "SELECT customercode,fullname,location,phone FROM customers " +
+            String query = "SELECT custcode,fullname,location,phone FROM customers " +
                     "WHERE customercode LIKE '%"+text+"%' OR fullname LIKE '%"+text+"%' OR " +
                     "location LIKE '%"+text+"%' OR phone LIKE '%"+text+"%'";
             resultSet = statement.executeQuery(query);

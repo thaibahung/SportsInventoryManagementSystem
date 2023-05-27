@@ -105,3 +105,15 @@ CREATE TABLE `suppliers` (
 LOCK TABLES `suppliers` WRITE;
 INSERT INTO `suppliers` VALUES (401,'sup1','Volleyball World','Ho Chi Minh','1800560001'),(402,'sup2','Basketball Store','New York','1800560041'),(403,'sup3','Tennis and More','Bangkook','6546521234'),(408,'sup6','Shelby Company Ltd.','Birmingham','9696969696');
 UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `customers`;
+CREATE TABLE `customers` (
+  `fullname` varchar(50) NOT NULL,
+  `location` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `custcode` varchar(30) NOT NULL,
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+LOCK TABLES `customers` WRITE;
+INSERT INTO `customers` VALUES ('Thai Ba Hung','Vietnam','0983486677','V202200668');
+UNLOCK TABLES;
